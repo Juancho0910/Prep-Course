@@ -217,7 +217,6 @@ function doWhile(numero) {
   return suma;
 }
 
-
 // No modificar nada debajo de esta línea
 // --------------------------------
 
