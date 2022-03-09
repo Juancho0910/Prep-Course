@@ -37,6 +37,8 @@ function agregarStringInvertida() {
   // Pista: Necesitarás usar "this" dentro de "reverse"
 
    String.prototype.reverse = function(){
+     // return this.split("").reverse().join("")             [otra forma de resolver]
+     //   (separa letras)  (las da vuelta)  (las junta de nuevo)
     var stringinver = '';
     for (let i = this.length -1 ; i >= 0; i--) {
       stringinver = stringinver + this[i] 
@@ -94,8 +96,6 @@ function agregarMetodo() {
   Persona.prototype.datos = function(){
     return this.nombre + ", " + this.edad + " años"
   }
-
-
 
 }
   
