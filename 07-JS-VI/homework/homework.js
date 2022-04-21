@@ -4,24 +4,22 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  return nombre[0].toUpperCase() + nombre.slice(1)
- 
-
+   var arr = nombre.split("")
+   arr[0] = arr[0].toUpperCase()
+   return arr.join("")
 }
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
-  cb()
-  
+ cb()
 }
 
 function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
-  cb(n1,n2)
-  
+  return cb(n1, n2)
 }
 
 function sumarArray(numeros, cb) {
@@ -29,11 +27,11 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var resultado = 0
-for (let i = 0; i < numeros.length; i++) {
-resultado = resultado + numeros[i]
-}
-cb(resultado)
+  var suma = 0
+  for (let i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i]
+  }
+  return cb(suma)
 }
 
 function forEach(array, cb) {
@@ -41,9 +39,12 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:}
 
-  array.forEach(function(elemento){
-    cb(elemento)
-  })
+
+// cualquiera de las dos 
+// array.forEach(function(element){
+ //  cb(element)
+// })
+array.forEach(element => cb(element))
 }
 
 function map(array, cb) {
@@ -51,10 +52,10 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+return array.map(function(element){
+ return  cb(element)
+})
 
-  return array.map(function(elemento){
-      return cb(elemento)
-  })
  
 }
 
@@ -62,10 +63,11 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  let newarr = array.filter(function(elemento){
-    return elemento[0].toLowerCase() === "a"
-  })
-  return newarr
+return array.filter(function(element){
+ return element[0] === "a" 
+})
+
+ 
 }
 
 // No modificar nada debajo de esta línea
